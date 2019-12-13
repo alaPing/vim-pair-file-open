@@ -43,10 +43,12 @@ function! pairfileopen#OpenPairFile(type)
   let target_path = substitute(path, filename, target_filename, "g")
 
   " 画面分割で開く
-  if a:type == 'horizontal'
+  if a:type == 'sp'
     execute "split " . target_path
-  else
+  elseif a:type == 'vsp'
     execute "vsplit " . target_path
+  else
+    execute "edit " . target_path
   end
 endfunction
 

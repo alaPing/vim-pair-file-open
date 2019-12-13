@@ -10,8 +10,9 @@ set cpo&vim
 
 
 " ----- ここから本体 ----- "
-command! Spair call pairfileopen#OpenPairFile('horizontal')
-command! Vpair call pairfileopen#OpenPairFile('vertical')
+command! Psp call pairfileopen#OpenPairFile('sp')
+command! Pvsp call pairfileopen#OpenPairFile('vsp')
+command! Pedit call pairfileopen#OpenPairFile('edit')
 " ----- ここまで本体 ----- "
 
 " 必要な宣言

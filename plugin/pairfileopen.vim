@@ -1,8 +1,8 @@
 " 必要な宣言
-if exists("g:loaded_pairfileopen")
+if exists("g:vim_pair_file_open#file_loaded") && !exist("g:vim_pair_file_open#pair")
   finish
 endif
-let g:loaded_pairfileopen = 1
+let g:vim_pair_file_open#file_loaded = 1
 
 let s:save_cpo = &cpo
 set cpo&vim

@@ -2,8 +2,11 @@
 ファイルパターンの組み合わせを登録しておくことで、対応するファイルを瞬時に開くことができるvimプラグインです。
 
 ## 用語集
-targetFile: 本機能が有効なファイル。targetFileを開いている状態でのみ機能する。
-pairFile: targetFileに対応して開くpairFile。
+* targetFile
+  * 本機能が有効なファイル
+  * targetFileを開いている状態でのみ機能する
+* pairFile
+  * targetFileに対応して開くpairFile
 
 ## 使い方
 1. .vimrc や init.vim　を開く

@@ -1,8 +1,8 @@
 " 必要な宣言
-if !exists("g:loaded_pairfileopen")
+if !exists("g:vim_pair_file_open#file_loaded")
   finish
 endif
-let g:loaded_pairfileopen = 1
+let g:vim_pair_file_open#file_loaded = 1
 
 let s:save_cpo = &cpo
 set cpo&vim
@@ -12,7 +12,10 @@ set cpo&vim
 " ----- ここから本体 ----- "
 function! pairfileopen#OpenPairFile(type)
   " 対になるファイルのパターンの組み合わせの設定を取得する
-  let pair = { "Screen.js": "ScreenContainer.js", "ScreenContainer.js": "Screen.js" }
+  if !exists("g:vim_pair_file_open#pair")
+    return
+  endif
+  let pair = g:vim_pair_file_open#pair
 
   " いま開いているファイルの名前を取得する
   let filename = expand("%")

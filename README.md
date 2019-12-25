@@ -6,7 +6,7 @@
   * 本機能が有効なファイル
   * targetFileを開いている状態でのみ機能する
 * pairFile
-  * targetFileに対応して開くpairFile
+  * 本機能で開くファイル
 
 ## 使い方
 1. .vimrc や init.vim　を開く
@@ -14,11 +14,17 @@
 
 ```
 " init.vim
-let g:vim_pair_file_open#pair = { "*Screen.js": "*ScreenContainer.js", "*ScreenContainer.js": "*Screen.js" }
+let g:vim_pair_file_open#pair = {
+  \ '*Screen.js': '*ScreenContainer.js',
+  \ '*ScreenContainer.js': '*Screen.js',
+  \ '*Redux.js': '../Sagas/*Sagas.js',
+  \ '*Sagas.js': '../Redux/*Redux.js',
+  \ }
 ```
-* HogeHogeScreen.jsを開いているとき、同じ階層にあるHogeHogeScreenContainer.jsを開く
-* HogeHogeScreenContainer.jsを開いているとき、同じ階層にあるHogeHogeScreen.jsを開く
-
+* HogeScreen.jsを開いているとき、同じ階層にあるHogeScreenContainer.jsを開く
+* HogeScreenContainer.jsを開いているとき、同じ階層にあるHogeScreen.jsを開く
+* HogeRedux.jsを開いているとき、HogeRedux.jsのある階層から辿って、../Sagas/HogeSagas.jsを開く
+* HogeSagas.jsを開いているとき、HogeSagas.jsのある階層から辿って、../Redux/HogeRedux.jsを開く
 
 3. コマンド```:Psp``` or ```:Pvsp``` or ```:Pedit```を叩く
 

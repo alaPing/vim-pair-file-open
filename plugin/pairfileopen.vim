@@ -1,5 +1,5 @@
 " 必要な宣言
-if exists("g:vim_pair_file_open#file_loaded") && !exist("g:vim_pair_file_open#pair")
+if exists("g:vim_pair_file_open#file_loaded") && !exists("g:vim_pair_file_open#pair")
   finish
 endif
 let g:vim_pair_file_open#file_loaded = 1
